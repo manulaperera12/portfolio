@@ -12,30 +12,30 @@ menuIcon.onclick = () => {
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+// window.onscroll = () => {
+//     sections.forEach(sec => {
+//         let top = window.scrollY;
+//         let offset = sec.offsetTop - 150;
+//         let height = sec.offsetHeight;
+//         let id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height){
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            });
-        };
-    });
+//         if(top >= offset && top < offset + height){
+//             navLinks.forEach(links => {
+//                 links.classList.remove('active');
+//                 document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+//             });
+//         };
+//     });
 
-    // ========= sticky navbar ========== 
-    let header = document.querySelector('header');
+//     // ========= sticky navbar ========== 
+//     let header = document.querySelector('header');
 
-    header.classList.toggle('stickly', window.scrollY > 100);
+//     header.classList.toggle('stickly', window.scrollY > 100);
     
-    // ========= remove toggle icon and navbar when click navbar link (scroll) ========== 
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
-};
+//     // ========= remove toggle icon and navbar when click navbar link (scroll) ========== 
+//     menuIcon.classList.remove('bx-x');
+//     navbar.classList.remove('active');
+// };
 
 // ========= scroll reveal ========== 
 ScrollReveal({ 
@@ -63,9 +63,33 @@ const typed = new Typed('.multiple-text', {
 let mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {scrollFunction()
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if(top >= offset && top < offset + height){
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+        };
+    });
+
+    // ========= sticky navbar ========== 
+    let header = document.querySelector('header');
+
+    header.classList.toggle('stickly', window.scrollY > 100);
+    
+    // ========= remove toggle icon and navbar when click navbar link (scroll) ========== 
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+};
 
 function scrollFunction() {
+    
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
   } else {
@@ -79,7 +103,7 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-// mail 
+mail 
 function loadEvents() {
     var mailString;
     function updateMailString() {
