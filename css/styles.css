@@ -104,6 +104,10 @@ section{
     margin-bottom: 2rem;
 }
 
+.home-content{
+    width: 60%;
+}
+
 span{
     color: var(--main-color);
 }
