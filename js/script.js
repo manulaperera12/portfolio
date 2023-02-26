@@ -52,9 +52,9 @@ ScrollReveal({
 
 // ========= typed js ========== 
 const typed = new Typed('.multiple-text', {
-    strings: ['an Undergraduate Software Engineer', 'a Web Developer', 'a Graphic Designer'],
-    typeSpeed: 100,
-    backSpeed: 100,
+    strings: ['an Undergraduate Software Engineer', 'a Web Developer', 'a Graphic Designer', 'a Cricketer'],
+    typeSpeed: 110,
+    backSpeed: 80,
     backDelay: 1000,
     loop: true
 });
