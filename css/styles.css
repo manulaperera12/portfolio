@@ -177,6 +177,14 @@ span{
 
 }
 
+.about-img{
+    width: 100%;
+}
+
+.about-content{
+    width: 100%;
+}
+
 .about{
     display: flex;
     justify-content: center;
