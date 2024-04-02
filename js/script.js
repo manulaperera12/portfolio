@@ -54,7 +54,7 @@ ScrollReveal({
 
 // ========= typed js ========== 
 const typed = new Typed('.multiple-text', {
-    strings: ['an Undergraduate Software Engineer', 'a Web Developer', 'a Graphic Designer', 'a Cricketer'],
+    strings: ['an Undergraduate Software Engineer', 'a Mobile App Developer', 'a Web Developer', 'a Graphic Designer', 'a Cricketer'],
     typeSpeed: 110,
     backSpeed: 80,
     backDelay: 1000,
