@@ -1,174 +1,716 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manula Perera - Software Engineer & Mobile App Developer</title>
-
-    <!-- box font icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- css link  -->
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manula Perera — Software Engineer & Mobile App Developer</title>
+  <meta name="description" content="Manula Perera — Software Engineer & Mobile App Developer with 3+ years experience in Flutter, React Native, Kotlin, Java. Based in Sri Lanka.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- header section  -->
-    <header class="header">
-        <a href="#" class="logo">Manula Perera</a>
 
-        <i class='bx bx-menu' id="menu-icon"></i>
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
 
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <!-- Particle canvas -->
+  <canvas id="particle-canvas"></canvas>
 
-    <!-- home section design -->
-<section class="home" id="home">
-    <div class="home-content">
-        <h3>Hello, It's Me</h3>
-        <h1>Manula Perera</h1>
-        <h3>And I'm <span class="multiple-text"></span></h3>
-        <p>Graduated Software Engineer with Second Upper class honors and 3+ years of industrial experience specializing in mobile application development. <br> Passionate about creating innovative solutions and delivering exceptional user experiences.</p>
-        <div class="social-media">
-            <a href="https://www.facebook.com/profile.php?id=100089424252102" target="_blank"><i class='bx bxl-facebook' ></i></a>
-            <a href="https://instagram.com/manula._perera" target="_blank"><i class='bx bxl-instagram-alt' ></i></a>
-            <a href="https://www.linkedin.com/in/manula-perera-b2840b221/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <a href="#home" class="logo">
+      <span class="logo-bracket">&lt;</span>MP<span class="logo-bracket">/&gt;</span>
+    </a>
+    <nav class="navbar" id="navbar">
+      <a href="#home" class="nav-link active" data-section="home">Home</a>
+      <a href="#about" class="nav-link" data-section="about">About</a>
+      <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+      <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+      <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+      <a href="#services" class="nav-link" data-section="services">Services</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="assets/Manula_Perera_CV_April_2026.pdf" class="btn-outline" download>
+        <i class='bx bx-download'></i> Resume
+      </a>
+      <button class="menu-btn" id="menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg" id="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for opportunities
         </div>
-        <a href="assets/Manula_Perera_cv_2025-Aug.pdf" class="btn" download>Download CV</a>
-    </div>
-
-    <div class="home-img">
-        <img src="images/mainImage4.png" alt="">
-    </div>
-</section>
-
-<!-- about section  -->
-<section class="about" id="about">
-    <div class="about-img">
-        <img src="images/secImage3.png" alt="">
-    </div>
-
-    <div class="about-content">
-        <h2 class="heading">About <span>Me</span></h2>
-        <h3>Software Engineer & Mobile App Developer</h3>
-        <p>Hello! I'm Manula Perera, a graduated Software Engineer with Second Upper class honors from the Informatics Institute of Technology in Sri Lanka, affiliated with the University of Westminster in the United Kingdom. With over 3 years of industrial experience, I specialize in mobile application development using cutting-edge technologies.</p>
-        
-        <p>My expertise includes Java, Kotlin, Flutter, Dart, React Native, and other modern development frameworks. I have successfully delivered numerous mobile applications that have been deployed to both iOS and Android platforms, serving thousands of users.</p>
-        
-        <p>Beyond my technical skills, I'm passionate about cricket and believe in maintaining a balanced lifestyle. My goal is to continue growing as a professional software engineer while contributing innovative solutions to the ever-evolving tech industry.</p>
-    
-        <a href="https://www.linkedin.com/in/manula-perera-b2840b221/" class="btn" target="_blank"><i class='bx bxl-linkedin-square'></i>LinkedIn</a>
-    </div>
-</section>
-
-<!-- services section  -->
-<section class="services" id="services">
-    <h2 class="heading">My <span>Services</span></h2>
-
-    <div class="services-container">
-        <div class="services-box">
-            <i class='bx bx-mobile-alt'></i>
-            <h3>Mobile App Development</h3>
-            <p>Specialized in developing native and cross-platform mobile applications using Flutter, React Native, Kotlin, and Java. Creating seamless user experiences for iOS and Android platforms.</p>
-            <a href="#contact" class="btn">Contact</a>
+        <h1 class="hero-name">
+          <span class="reveal-text">Manula</span>
+          <span class="reveal-text delay-1">Perera</span>
+        </h1>
+        <div class="hero-role">
+          <span class="role-prefix">I build&nbsp;</span><span class="typed-role" id="typed-role"></span>
         </div>
-
-        <div class="services-box">
-            <i class='bx bx-code-alt'></i>
-            <h3>Web Development</h3>
-            <p>Building responsive, modern web applications using React, Node.js, and other cutting-edge technologies. Focused on performance, accessibility, and user experience.</p>
-            <a href="#contact" class="btn">Contact</a>
+        <p class="hero-desc">Software Engineer with Second Upper Class Honours &amp; 3+ years of industrial experience. Specializing in cross-platform mobile development with Flutter, React Native, Kotlin &amp; Java.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">
+            View My Work <i class='bx bx-arrow-back bx-rotate-180'></i>
+          </a>
+          <a href="#contact" class="btn-ghost">Let's Talk</a>
         </div>
-
-        <div class="services-box">
-            <i class='bx bx-cog'></i>
-            <h3>Software Engineering</h3>
-            <p>End-to-end software development including system design, architecture, testing, and deployment. Experienced in agile methodologies and best practices.</p>
-            <a href="#contact" class="btn">Contact</a>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/manula-perera-b2840b221/" target="_blank" class="social-link" aria-label="LinkedIn">
+            <i class='bx bxl-linkedin'></i>
+          </a>
+          <a href="https://github.com/manulaperera12" target="_blank" class="social-link" aria-label="GitHub">
+            <i class='bx bxl-github'></i>
+          </a>
+          <a href="https://instagram.com/manula._perera" target="_blank" class="social-link" aria-label="Instagram">
+            <i class='bx bxl-instagram'></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100089424252102" target="_blank" class="social-link" aria-label="Facebook">
+            <i class='bx bxl-facebook'></i>
+          </a>
         </div>
-    </div>
-</section>
-
-<!-- Protfolio section  -->
-<section class="portfolio" id="portfolio">
-    <h2 class="heading">Latest <span>Projects</span></h2>
-
-    <div class="portfolio-container">
-
-        <div class="portfolio-box">
-            <img src="images/img1.png" alt="">
-            <div class="portfolio-layer">
-                <h4>Mobile Applications</h4>
-                <p>Developed and deployed multiple mobile applications with 3+ years of industrial experience in Flutter, React Native, and native development.</p>
-                <a href="https://github.com/manulaperera12" target="_blank"><i class='bx bx-link-external' ></i></a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-3d" id="hero-card">
+          <div class="card-inner">
+            <div class="profile-ring">
+              <div class="ring ring-1"></div>
+              <div class="ring ring-2"></div>
+              <div class="ring ring-3"></div>
+              <div class="profile-img-wrap">
+                <img src="images/mainImage4.png" alt="Manula Perera" class="profile-img">
+              </div>
             </div>
-        </div>
-
-        <div class="portfolio-box">
-            <img src="images/img2.png" alt="">
-            <div class="portfolio-layer">
-                <h4>Software Solutions</h4>
-                <p>Created enterprise-level software solutions that solve complex business problems and improve operational efficiency.</p>
-                <a href="https://github.com/manulaperera12" target="_blank"><i class='bx bx-link-external' ></i></a>
+            <!-- Tech badges orbit — replace SVGs with actual logos if desired -->
+            <div class="floating-badge badge-flutter" style="--delay:0s">
+              <i class='bx bxl-flutter'></i> Flutter
             </div>
-        </div>
-
-        <div class="portfolio-box">
-            <img src="images/img3.png" alt="">
-            <div class="portfolio-layer">
-                <h4>Web Applications</h4>
-                <p>Built responsive web applications with modern frameworks, focusing on performance and user experience.</p>
-                <a href="https://github.com/manulaperera12" target="_blank"><i class='bx bx-link-external' ></i></a>
+            <div class="floating-badge badge-react" style="--delay:1.5s">
+              <i class='bx bxl-react'></i> React Native
             </div>
+            <div class="floating-badge badge-kotlin" style="--delay:3s">
+              <span class="badge-letter kotlin-k">K</span> Kotlin
+            </div>
+            <div class="floating-badge badge-swift" style="--delay:0.8s">
+              <span class="badge-letter swift-s">S</span> Swift
+            </div>
+            <div class="floating-badge badge-python" style="--delay:2.2s">
+              <i class='bx bxl-python'></i> Python
+            </div>
+            <div class="floating-badge badge-golang" style="--delay:3.8s">
+              <span class="badge-letter go-g">Go</span> Golang
+            </div>
+            <div class="stats-strip">
+              <div class="stat"><span class="stat-num">3+</span><span class="stat-lbl">Yrs Exp</span></div>
+              <div class="stat-div"></div>
+              <div class="stat"><span class="stat-num">15+</span><span class="stat-lbl">Projects</span></div>
+              <div class="stat-div"></div>
+              <div class="stat"><span class="stat-num">2nd</span><span class="stat-lbl">Upper Hons</span></div>
+            </div>
+          </div>
         </div>
-
-        
+      </div>
     </div>
-</section>
-
-<!-- cotact section  -->
-<section class="contact" id="contact">
-     <h2 class="heading">Contact <span>Me!</span></h2>
-
-     <form action="mailto:manulaperera1232@gmail.com" method="post" enctype="text/plain">
-        <div class="input-box">
-            <input type="text" placeholder="Full Name" name="Full Name ">
-            <input type="email" placeholder="Email Address" name="Email Address ">
-        </div>
-
-        <div class="input-box">
-            <input type="number" placeholder="Mobile Number" name="Mobile Number ">
-            <input type="text" placeholder="Email Subject" name="Email Subject " id="suject" class="form-control">
-        </div>
-
-        <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message" class="form-control"></textarea>
-        <input type="submit" id="mail-link" value="Send Message" class="btn">
-    </form>
-</section>
-
-<!-- footer section  -->
-<footer class="footer">
-    <div class="footer-text">
-        <p>Copyright &copy; 2025 by <a href="https://pereratechnologies.com/" target="_blank">Perera Technologies</a> | All Rights Reserved.</p>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
     </div>
-</footer>
+  </section>
 
-<!-- scroll to top button  -->
-<button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt' ></i></button>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="section-header">
+      <span class="section-tag">01 — About</span>
+      <h2 class="section-title">Who I Am</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-img-col">
+        <!-- Image Carousel: add slides below, add images to images/ folder -->
+        <div class="about-carousel" id="about-carousel">
+          <div class="carousel-track" id="carousel-track">
+            <div class="carousel-slide"><img src="images/secImage3.png" alt="Manula Perera" class="about-img"></div>
+            <div class="carousel-slide"><img src="images/mainImage4.png" alt="Manula Perera" class="about-img"></div>
+            <div class="carousel-slide"><img src="images/mainImage5.png" alt="Manula Perera" class="about-img"></div>
+            <div class="carousel-slide"><img src="images/mainImage6.png" alt="Manula Perera" class="about-img"></div>
+          </div>
+          <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Previous"><i class='bx bx-chevron-left'></i></button>
+          <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Next"><i class='bx bx-chevron-right'></i></button>
+          <div class="carousel-dots" id="carousel-dots"></div>
+        </div>
+        <!-- Old uni-logos removed, now inside text column below -->
+      </div>
+      <div class="about-text-col">
+        <h3>Software Engineer &amp; Mobile App Developer based in Sri Lanka</h3>
+        <p>I'm Manula Perera — a passionate Software Engineer who graduated with <strong>Second Upper Class Honours</strong> from the <strong class="highlight-uni">University of Westminster, UK</strong>, delivered locally through IIT Sri Lanka.</p>
+        <p>With over <strong>3 years of hands-on industrial experience</strong>, I specialize in building cross-platform and native mobile applications that reach thousands of users on both iOS and Android. I've delivered products from concept to production across startups and established companies.</p>
+        <p>Beyond coding, I'm an avid <strong>cricketer</strong> who believes a balanced life fuels creative thinking and engineering excellence.</p>
 
-<!-- scroll reveal  -->
-<script src="https://unpkg.com/scrollreveal"></script>
+        <!-- Credential strip: replace logo placeholder divs with <img> when you have logos -->
+        <div class="credential-strip">
+          <div class="credential-uni">
+            <div class="credential-uni-logo logo-wm">
+              <!-- <img src="images/westminster-logo.png" alt="University of Westminster"> -->
+              UoW
+            </div>
+            <div class="credential-uni-text">
+              <strong>University of Westminster</strong>
+              <span>London, United Kingdom &mdash; Degree Awarding Body</span>
+            </div>
+          </div>
+          <div class="credential-divider"></div>
+          <div class="credential-uni">
+            <div class="credential-uni-logo logo-iit">
+              <!-- <img src="images/iit-logo.png" alt="IIT Sri Lanka"> -->
+              IIT
+            </div>
+            <div class="credential-uni-text">
+              <strong>IIT Sri Lanka</strong>
+              <span>Colombo &mdash; Local Affiliate Partner</span>
+            </div>
+          </div>
+        </div>
 
-<!-- typed js  -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <i class='bx bx-map-pin'></i>
+            <span>Sri Lanka</span>
+          </div>
+          <div class="highlight-item">
+            <i class='bx bx-envelope'></i>
+            <span>manulaperera1232@gmail.com</span>
+          </div>
+          <div class="highlight-item">
+            <i class='bx bx-briefcase'></i>
+            <span>Open to full-time &amp; freelance roles</span>
+          </div>
+        </div>
+        <a href="assets/Manula_Perera_CV_April_2026.pdf" class="btn-primary" download>
+          <i class='bx bx-download'></i> Download CV
+        </a>
+      </div>
+    </div>
+  </section>
 
-<!-- java script link  -->
-<script src="js/script.js"></script>
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="section-header">
+      <span class="section-tag">02 — Skills</span>
+      <h2 class="section-title">Tech Stack</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category glass-card">
+        <div class="skill-cat-icon"><i class='bx bx-mobile-alt'></i></div>
+        <h4>Mobile Development</h4>
+        <div class="skill-tags">
+          <span class="tag tag-primary">Flutter</span>
+          <span class="tag tag-primary">Dart</span>
+          <span class="tag">React Native</span>
+          <span class="tag">Kotlin</span>
+          <span class="tag">Java</span>
+          <span class="tag">Swift</span>
+          <span class="tag">Python</span>
+          <span class="tag">Golang</span>
+        </div>
+      </div>
+      <div class="skill-category glass-card">
+        <div class="skill-cat-icon"><i class='bx bx-code-alt'></i></div>
+        <h4>Frontend</h4>
+        <div class="skill-tags">
+          <span class="tag">React.js</span>
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
+        </div>
+      </div>
+      <div class="skill-category glass-card">
+        <div class="skill-cat-icon"><i class='bx bx-server'></i></div>
+        <h4>Backend</h4>
+        <div class="skill-tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">Express.js</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">MongoDB</span>
+        </div>
+      </div>
+      <div class="skill-category glass-card">
+        <div class="skill-cat-icon"><i class='bx bx-cog'></i></div>
+        <h4>Tools &amp; Platforms</h4>
+        <div class="skill-tags">
+          <span class="tag">Git</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Xcode</span>
+          <span class="tag">Android Studio</span>
+          <span class="tag">VS Code</span>
+          <span class="tag">Figma</span>
+          <span class="tag">Postman</span>
+        </div>
+      </div>
+    </div>
+    <div class="proficiency-bars">
+      <h3>Core Proficiency</h3>
+      <div class="bar-list">
+        <div class="bar-item">
+          <div class="bar-label"><span>Flutter / Dart</span><span>95%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="95"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>React Native</span><span>85%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Kotlin / Java</span><span>80%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Node.js / Backend</span><span>75%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="75"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>React.js / Web</span><span>70%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="experience" id="experience">
+    <div class="section-header">
+      <span class="section-tag">03 — Experience</span>
+      <h2 class="section-title">Work History</h2>
+    </div>
+
+    <!-- VISIBLE (latest 3) -->
+    <div class="timeline" id="timeline-visible">
+
+      <!-- JOB 1 — Replace logo-placeholder img with actual company logo -->
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content glass-card">
+          <div class="tl-header">
+            <div class="tl-header-left">
+              <div class="company-logo-wrap">
+                <!-- Replace with: <img src="images/company1-logo.png" alt="Perera Technologies"> -->
+                <div class="company-logo-placeholder">PT</div>
+              </div>
+              <div>
+                <h4>Software Engineer</h4>
+                <span class="tl-company">Perera Technologies (Pvt) Ltd</span>
+              </div>
+            </div>
+            <span class="tl-date">2023 — Present</span>
+          </div>
+          <ul class="tl-list">
+            <li>Leading mobile app development using Flutter &amp; React Native for multiple client products.</li>
+            <li>Architecting scalable backend services with Node.js &amp; Firebase.</li>
+            <li>Deployed apps to Apple App Store &amp; Google Play Store serving thousands of users.</li>
+            <li>Mentoring junior developers and conducting code reviews.</li>
+          </ul>
+          <div class="tl-tags"><span>Flutter</span><span>React Native</span><span>Node.js</span><span>Firebase</span></div>
+        </div>
+      </div>
+
+      <!-- JOB 2 -->
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content glass-card">
+          <div class="tl-header">
+            <div class="tl-header-left">
+              <div class="company-logo-wrap">
+                <!-- Replace with: <img src="images/company2-logo.png" alt="Company Name"> -->
+                <div class="company-logo-placeholder">C2</div>
+              </div>
+              <div>
+                <h4>Mobile App Developer</h4>
+                <span class="tl-company">Your Previous Company</span>
+              </div>
+            </div>
+            <span class="tl-date">2022 — 2023</span>
+          </div>
+          <ul class="tl-list">
+            <li>Developed and maintained cross-platform mobile applications using Flutter &amp; React Native.</li>
+            <li>Integrated third-party APIs, payment gateways (Stripe), and push notifications.</li>
+            <li>Implemented state management with GetX and Bloc patterns.</li>
+            <li>Delivered high-quality features following agile sprints.</li>
+          </ul>
+          <div class="tl-tags"><span>Flutter</span><span>React Native</span><span>GetX</span><span>Stripe</span></div>
+        </div>
+      </div>
+
+      <!-- JOB 3 -->
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content glass-card">
+          <div class="tl-header">
+            <div class="tl-header-left">
+              <div class="company-logo-wrap">
+                <!-- Replace with: <img src="images/company3-logo.png" alt="Company Name"> -->
+                <div class="company-logo-placeholder">C3</div>
+              </div>
+              <div>
+                <h4>Junior Software Engineer</h4>
+                <span class="tl-company">Your Previous Company</span>
+              </div>
+            </div>
+            <span class="tl-date">2021 — 2022</span>
+          </div>
+          <ul class="tl-list">
+            <li>Developed native Android applications using Kotlin and Java.</li>
+            <li>Collaborated in agile teams with daily standups and sprint planning.</li>
+            <li>Contributed to backend REST API development with Node.js.</li>
+          </ul>
+          <div class="tl-tags"><span>Kotlin</span><span>Java</span><span>Node.js</span><span>REST API</span></div>
+        </div>
+      </div>
+
+    </div><!-- end timeline-visible -->
+
+    <!-- HIDDEN extra jobs (show more) -->
+    <div class="timeline timeline-hidden" id="timeline-hidden">
+
+      <!-- JOB 4 -->
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content glass-card">
+          <div class="tl-header">
+            <div class="tl-header-left">
+              <div class="company-logo-wrap">
+                <!-- Replace with: <img src="images/company4-logo.png" alt="Company Name"> -->
+                <div class="company-logo-placeholder">C4</div>
+              </div>
+              <div>
+                <h4>Software Engineering Intern</h4>
+                <span class="tl-company">Your Internship Company</span>
+              </div>
+            </div>
+            <span class="tl-date">2020 — 2021</span>
+          </div>
+          <ul class="tl-list">
+            <li>Assisted senior engineers in mobile application development.</li>
+            <li>Participated in code reviews and team meetings.</li>
+            <li>Built UI components using Flutter and React Native.</li>
+          </ul>
+          <div class="tl-tags"><span>Flutter</span><span>React Native</span></div>
+        </div>
+      </div>
+
+      <!-- Add more past jobs here following the same pattern -->
+
+    </div><!-- end timeline-hidden -->
+
+    <div class="show-more-wrap">
+      <button class="show-more-btn" id="exp-show-more">
+        <span class="show-more-label">Show More Experience</span>
+        <i class='bx bx-chevron-down show-more-icon'></i>
+      </button>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="edu-section">
+      <h3>Education</h3>
+      <div class="edu-timeline" id="edu-timeline-visible">
+
+        <!-- EDU 1 — Primary degree (University of Westminster via IIT) -->
+        <div class="edu-item glass-card" data-animate>
+          <div class="edu-logos">
+            <!-- Replace placeholders with actual logo <img> tags -->
+            <div class="edu-logo-wrap" title="University of Westminster, UK">
+              <!-- <img src="images/westminster-logo.png" alt="University of Westminster"> -->
+              <div class="edu-logo-placeholder wm">UoW</div>
+            </div>
+            <span class="edu-logo-via">via</span>
+            <div class="edu-logo-wrap" title="IIT Sri Lanka">
+              <!-- <img src="images/iit-logo.png" alt="IIT Sri Lanka"> -->
+              <div class="edu-logo-placeholder iit">IIT</div>
+            </div>
+          </div>
+          <div class="edu-info">
+            <h4>BSc (Hons) Software Engineering</h4>
+            <div class="edu-award"><i class='bx bx-medal'></i> Second Upper Class Honours</div>
+            <p class="edu-primary-uni">University of Westminster, United Kingdom</p>
+            <p class="edu-sub">Delivered locally by IIT Sri Lanka &mdash; Local Affiliate Partner</p>
+          </div>
+          <span class="tl-date">Graduated 2023</span>
+        </div>
+
+      </div><!-- end edu-timeline-visible -->
+
+      <!-- Hidden extra education -->
+      <div class="edu-timeline edu-hidden" id="edu-timeline-hidden">
+
+        <!-- EDU 2 — e.g. A/Levels, other diplomas / courses -->
+        <div class="edu-item glass-card" data-animate>
+          <div class="edu-logos">
+            <div class="edu-logo-wrap" title="Your School / College">
+              <!-- <img src="images/school-logo.png" alt="School"> -->
+              <div class="edu-logo-placeholder school">🏫</div>
+            </div>
+          </div>
+          <div class="edu-info">
+            <h4>G.C.E. Advanced Level (A/Levels)</h4>
+            <p class="edu-primary-uni">Your School Name</p>
+            <p class="edu-sub">Technology Stream — Physical Science / ICT</p>
+          </div>
+          <span class="tl-date">2018</span>
+        </div>
+
+        <!-- Add more education here following the same pattern -->
+
+      </div><!-- end edu-hidden -->
+
+      <div class="show-more-wrap">
+        <button class="show-more-btn" id="edu-show-more">
+          <span class="show-more-label">Show More Education</span>
+          <i class='bx bx-chevron-down show-more-icon'></i>
+        </button>
+      </div>
+
+    </div><!-- end edu-section -->
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="section-header">
+      <span class="section-tag">04 — Projects</span>
+      <h2 class="section-title">Featured Work</h2>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card glass-card" data-animate>
+        <div class="project-img-wrap">
+          <img src="images/img1.png" alt="Mobile Applications" class="project-img">
+          <div class="project-overlay">
+            <a href="https://github.com/manulaperera12" target="_blank" class="project-link-btn">
+              <i class='bx bxl-github'></i> View on GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-num">01</div>
+          <h4>Zinkly — Social Commerce App</h4>
+          <p>A full-featured social commerce mobile application built with Flutter. Features Stripe payments, real-time chat, push notifications, and iOS/Android deployment.</p>
+          <div class="project-tech">
+            <span>Flutter</span><span>Dart</span><span>Node.js</span><span>Stripe</span><span>Firebase</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/manulaperera12" target="_blank"><i class='bx bxl-github'></i> Code</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card glass-card" data-animate>
+        <div class="project-img-wrap">
+          <img src="images/img2.png" alt="Software Solutions" class="project-img">
+          <div class="project-overlay">
+            <a href="https://github.com/manulaperera12" target="_blank" class="project-link-btn">
+              <i class='bx bxl-github'></i> View on GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-num">02</div>
+          <h4>Enterprise Mobile Solutions</h4>
+          <p>Cross-platform business applications solving real operational challenges. Built with React Native and Kotlin for iOS and Android with custom native modules.</p>
+          <div class="project-tech">
+            <span>React Native</span><span>Kotlin</span><span>REST API</span><span>MySQL</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/manulaperera12" target="_blank"><i class='bx bxl-github'></i> Code</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card glass-card" data-animate>
+        <div class="project-img-wrap">
+          <img src="images/img3.png" alt="Web Applications" class="project-img">
+          <div class="project-overlay">
+            <a href="https://pereratechnologies.com" target="_blank" class="project-link-btn">
+              <i class='bx bx-link-external'></i> Live Demo
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-num">03</div>
+          <h4>Web Applications &amp; Dashboards</h4>
+          <p>Modern responsive web applications and admin dashboards built with React.js and Node.js backends. Focus on performance, accessibility and clean UX.</p>
+          <div class="project-tech">
+            <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>Express</span>
+          </div>
+          <div class="project-links">
+            <a href="https://pereratechnologies.com" target="_blank"><i class='bx bx-link-external'></i> Live</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="projects-cta">
+      <a href="https://github.com/manulaperera12" target="_blank" class="btn-outline">
+        <i class='bx bxl-github'></i> See All on GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <span class="section-tag">05 — Services</span>
+      <h2 class="section-title">What I Offer</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card glass-card" data-animate>
+        <div class="service-icon-wrap"><i class='bx bx-mobile-alt'></i></div>
+        <h4>Mobile App Development</h4>
+        <p>End-to-end cross-platform apps with Flutter &amp; React Native, plus native Android with Kotlin/Java. App Store &amp; Play Store deployment included.</p>
+        <ul class="service-list">
+          <li>iOS &amp; Android</li>
+          <li>Flutter / React Native</li>
+          <li>Native Kotlin / Java</li>
+          <li>App Store Deployment</li>
+        </ul>
+      </div>
+      <div class="service-card glass-card featured-service" data-animate>
+        <div class="service-badge">Most Popular</div>
+        <div class="service-icon-wrap"><i class='bx bx-devices'></i></div>
+        <h4>Full-Stack Development</h4>
+        <p>Complete product development from mobile frontend to Node.js backend, database design, APIs, and cloud deployment on AWS or Hostinger.</p>
+        <ul class="service-list">
+          <li>Node.js &amp; Express</li>
+          <li>Firebase &amp; MongoDB</li>
+          <li>REST API Design</li>
+          <li>Cloud Deployment</li>
+        </ul>
+      </div>
+      <div class="service-card glass-card" data-animate>
+        <div class="service-icon-wrap"><i class='bx bx-code-block'></i></div>
+        <h4>Web Development</h4>
+        <p>Responsive web applications and landing pages with React.js. SEO-optimized, fast-loading, and beautifully designed for maximum conversion.</p>
+        <ul class="service-list">
+          <li>React.js / Next.js</li>
+          <li>Responsive Design</li>
+          <li>SEO Optimization</li>
+          <li>Performance Tuning</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <span class="section-tag">06 — Contact</span>
+      <h2 class="section-title">Let's Work Together</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="contact-intro">Have a project in mind or want to collaborate? I'd love to hear from you. Let's create something amazing together.</p>
+        <div class="contact-items">
+          <a href="mailto:manulaperera1232@gmail.com" class="contact-item glass-card">
+            <div class="ci-icon"><i class='bx bx-envelope'></i></div>
+            <div>
+              <strong>Email</strong>
+              <span>manulaperera1232@gmail.com</span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/manula-perera-b2840b221/" target="_blank" class="contact-item glass-card">
+            <div class="ci-icon"><i class='bx bxl-linkedin'></i></div>
+            <div>
+              <strong>LinkedIn</strong>
+              <span>manula-perera-b2840b221</span>
+            </div>
+          </a>
+          <a href="https://github.com/manulaperera12" target="_blank" class="contact-item glass-card">
+            <div class="ci-icon"><i class='bx bxl-github'></i></div>
+            <div>
+              <strong>GitHub</strong>
+              <span>manulaperera12</span>
+            </div>
+          </a>
+          <a href="https://pereratechnologies.com" target="_blank" class="contact-item glass-card">
+            <div class="ci-icon"><i class='bx bx-globe'></i></div>
+            <div>
+              <strong>Company</strong>
+              <span>pereratechnologies.com</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <form class="contact-form glass-card" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit" id="submit-btn">
+            <span>Send Message</span>
+            <i class='bx bx-send'></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span class="logo-bracket">&lt;</span>MP<span class="logo-bracket">/&gt;</span>
+        </a>
+        <p>Building exceptional digital experiences.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/manula-perera-b2840b221/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/manulaperera12" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+        <a href="https://instagram.com/manula._perera" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Manula Perera. Crafted with ❤️ &amp; <a href="https://pereratechnologies.com" target="_blank">Perera Technologies</a></p>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+    <i class='bx bx-up-arrow-alt'></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
