@@ -192,7 +192,8 @@ document.addEventListener('mousemove', e => {
     shootingStars.push(new ShootingStar(mouseX, mouseY, mouse.vX, mouse.vY));
   }
 
-  // 3D card tilt
+  // 3D card tilt - DISABLED as per user request to prevent flipping
+  /*
   if (card) {
     const rect = card.getBoundingClientRect();
     const x = mouseX - rect.left - rect.width / 2;
@@ -200,6 +201,7 @@ document.addEventListener('mousemove', e => {
     card.querySelector('.card-inner').style.transform =
       `rotateY(${(x / rect.width) * 20}deg) rotateX(${-(y / rect.height) * 20}deg)`;
   }
+  */
 });
 
 if (card) {
